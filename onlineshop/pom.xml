@@ -9,7 +9,7 @@
    <url>http://maven.apache.org</url>
   
   <properties>
-  		<javaee.version>7.0</javaee.version> <!-- proveri da li se ovo promenilo kada updateujes projekat (treba da se promeni na 8.0.1) -->
+  		<javaee.version>8.0.1</javaee.version> <!-- proveri da li se ovo promenilo kada updateujes projekat (treba da se promeni na 8.0.1) -->
   		<spring.version>4.3.6.RELEASE</spring.version>
   </properties>
   
@@ -37,6 +37,13 @@
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-webmvc</artifactId>
 	    <version>${spring.version}</version>
+	</dependency>
+	
+	<!-- JSTL - for using c:if and other in jsp files (such as page.jsp)-->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>jstl</artifactId>
+	    <version>1.2</version>
 	</dependency>
     
   </dependencies>

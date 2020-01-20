@@ -1,5 +1,10 @@
+html{
+	height: 100%; /*ovo treba da se doda da bi imalo u odnosu na sta da se gleda procenat koji se koristi u body-u (u body-u: height: 100%;)*/
+}
+
 body {
-  padding-top: 70px
+  padding-top: 70px;
+  height: 100%;
 }
 
 .slide-image {
@@ -43,5 +48,22 @@ body {
 }
 
 footer {
-  margin: 50px 0;
+ margin: 0;
+}
+
+/* custom styling */
+
+.wrapper {
+	min-height: 100%;
+	position: relative;
+}
+
+.content {
+	padding-bottom: 60px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	height: 60px;
 }
