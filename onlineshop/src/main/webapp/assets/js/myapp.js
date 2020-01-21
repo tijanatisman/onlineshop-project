@@ -1,14 +1,21 @@
 $(function() {
-	// solving the active manu problem
-
-	switch (manu) {
+	// solving the active menu problem
+	switch (menu) {
+	
+	case 'All products':
+		$('#listProducts').addClass('active');
+		break;
 	case 'About Us':
 		$('#about').addClass('active');
 		break;
 	case 'Contact':
 		$('#contact').addClass('active');
+		break;
+	case 'Home':
+		break;
 	default:
-		$('#home').addClass('active');
+		$('#listProducts').addClass('active');
+		$('#category_'+menu).addClass('active');
 		break;
 	}
 });
