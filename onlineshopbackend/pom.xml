@@ -12,6 +12,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>4.3.6.RELEASE</spring.version>
   </properties>
 
   <dependencies>
@@ -21,7 +22,23 @@
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
+    
+    <!-- SPRING - proveri kasnije sta je ovo tacno -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>${spring.version}</version>
+	</dependency>
+	
+	<!-- JSTL - for using c:if and other in jsp files (such as page.jsp)-->
+<!-- 	<dependency> -->
+<!-- 	    <groupId>javax.servlet</groupId> -->
+<!-- 	    <artifactId>jstl</artifactId> -->
+<!-- 	    <version>1.2</version> -->
+<!-- 	</dependency> -->
   </dependencies>
+  
+  
   
   <build>
   	<plugins>
