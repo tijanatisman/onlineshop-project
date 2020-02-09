@@ -1,55 +1,64 @@
 package net.main.onlineshopbackend.dao.impl;
 
-import java.util.ArrayList;
 import java.util.List;
 
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.main.onlineshopbackend.dao.CategoryDao;
 import net.main.onlineshopbackend.dto.Category;
 
-@Repository /*ovo moras da stavis da bi dispatcher-servlet mogao u pageControlleru da pozove categoryDao, tj da ga Autowired-uje, mozes da stavis ovako, a mozes i da mu dodelis defaultni name u zagradi ("categoryDao")*/
+@Repository
+@Transactional
 public class CategoryDaoImpl implements CategoryDao {
 
-	private static List<Category> categories = new ArrayList<>();
-	
-	static {
-		Category cat1 = new Category();
-		cat1.setId(1);
-		cat1.setName("Laptop");
-		cat1.setDescription("bla bla");
-		cat1.setImageUrl("nekiurl.png");
-		categories.add(cat1);
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Category> getAllActiveCategories() {
+		String selectAllActiveCategories = "FROM Category WHERE active = :active";
 		
-		Category cat2 = new Category();
-		cat2.setId(2);
-		cat2.setName("Telefon");
-		cat2.setDescription("bla bla telefon nekiii");
-		cat2.setImageUrl("nekiurl.png");
-		categories.add(cat2);
+		Query<Category> query = sessionFactory.getCurrentSession().createQuery(selectAllActiveCategories);
+		query.setParameter("active", true);
 		
-		Category cat3 = new Category();
-		cat3.setId(3);
-		cat3.setName("Komp");
-		cat3.setDescription("blaaaa");
-		cat3.setImageUrl("nekiurl.png");
-		categories.add(cat3);
-		
+		return query.getResultList();
 	}
 	
-	
 	@Override
-	public List<Category> getAllCategories() {
-		return categories;
+	public Category getCategory(int categoryId) {
+		try {
+			return sessionFactory.getCurrentSession().get(Category.class, categoryId); 
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+
 	}
 
 	@Override
-	public Category getCategory(int categoryId) {
-		for (Category category : categories) {
-			if(category.getId() == categoryId) {
-				return category;
-			}
+	public boolean addCategory(Category category) {
+		try {
+			sessionFactory.getCurrentSession().persist(category);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
 		}
-		return null;
+	}
+
+	@Override
+	public boolean updateCategory(Category category) {
+		try {
+			sessionFactory.getCurrentSession().update(category);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}		
+		return false;
 	}
 }

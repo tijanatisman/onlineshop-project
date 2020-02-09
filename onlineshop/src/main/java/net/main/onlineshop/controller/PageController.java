@@ -23,7 +23,7 @@ public class PageController {
 	public ModelAndView index() {		
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title", "Home");
-		mv.addObject("categories", categoryDao.getAllCategories());
+		mv.addObject("categories", categoryDao.getAllActiveCategories());
 		mv.addObject("userClickHome", true);
 		return mv;
 	}
@@ -53,7 +53,7 @@ public class PageController {
 		mv.addObject("title", "All products");
 		
 		//passing all the categories
-		mv.addObject("categories", categoryDao.getAllCategories());
+		mv.addObject("categories", categoryDao.getAllActiveCategories());
 		
 		mv.addObject("userClickAllProducts", true);
 		return mv;
@@ -69,7 +69,7 @@ public class PageController {
 		mv.addObject("title", category.getName());
 		
 		//passing all the categories
-		mv.addObject("categories", categoryDao.getAllCategories());
+		mv.addObject("categories", categoryDao.getAllActiveCategories());
 		
 		//passing category by id
 		mv.addObject("category", category);

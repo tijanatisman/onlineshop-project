@@ -26,8 +26,8 @@
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.css" rel="stylesheet">
 
-<!-- Bootstrap theme - slate -->
-<%-- <link href="${css}/bootstrap-slate-theme.css" rel="stylesheet"> --%>
+<!-- Bootstrap css DataTable -->
+<link href="${css}/dataTables.bootstrap.css" rel="stylesheet">
 
 <!-- Add custom CSS here -->
 <link href="${css}/myapp.css" rel="stylesheet">
@@ -64,7 +64,15 @@
 
 		<!-- JavaScript -->
 		<script src="${js}/jquery.js"></script>
+		
+		<!-- Bootstrap -->
 		<script src="${js}/bootstrap.js"></script>
+		
+		<!-- Bootstrap DataTable -->
+		<script src="${js}/dataTables.bootstrap.js"></script>
+
+		<!-- JQuery DataTable -->
+		<script src="${js}/jquery.dataTables.js"></script>
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
