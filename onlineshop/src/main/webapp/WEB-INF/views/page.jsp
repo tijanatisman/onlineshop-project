@@ -20,7 +20,9 @@
 <title>${title}</title>
 
 <script>
-	window.menu = '${title}'
+	window.menu = '${title}';
+
+	window.contextRoot = '${contextRoot}';
 </script>
 
 <!-- Bootstrap core CSS -->
@@ -56,6 +58,10 @@
 			
 			<c:if test="${userClickAllProducts == true or userClickCategoryProducts == true}">
 				<%@include file="listProducts.jsp"%>
+			</c:if>
+			
+			<c:if test="${userClickProduct == true}">
+				<%@include file="product.jsp"%>
 			</c:if>
 		</div>
 

@@ -28,9 +28,21 @@
     </dependency>
     
     <!-- SPRING - proveri kasnije sta je ovo tacno -->
+    <dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-core</artifactId>
+	    <version>${spring.version}</version>
+	    <exclusions>
+	    	<exclusion>
+	    		<groupId>commons-logging</groupId>
+	    		<artifactId>commons-logging</artifactId>
+	    	</exclusion>
+	    </exclusions>
+	</dependency>
+    
 	<dependency>
 	    <groupId>org.springframework</groupId>
-	    <artifactId>spring-context</artifactId>
+	    <artifactId>spring-webmvc</artifactId>
 	    <version>${spring.version}</version>
 	</dependency>
 	
@@ -74,6 +86,13 @@
 	    <groupId>org.apache.commons</groupId>
 	    <artifactId>commons-dbcp2</artifactId>
 	    <version>2.1.1</version>
+<!-- 	    Ove exclusions-e stavljam da bih mogla da stavim moj custom logging file u kome cu pisati da li ce se slq i tako neke stvari prikazivati u konzoli, ovo postoji na 3 mesta, (na backendu 2 mesta, ovde i u spring-core dependency) a na frontu postoji na jednom mestu i to u spring-core dependency -->
+	    <exclusions>
+	    	<exclusion>
+	    		<groupId>commons-logging</groupId>
+	    		<artifactId>commons-logging</artifactId>
+	    	</exclusion>
+	    </exclusions>
 	</dependency>
 	
 	<!-- hibernate -->
@@ -88,6 +107,21 @@
 	    <artifactId>jackson-annotations</artifactId>
 	    <version>${jackson.version}</version>
 	</dependency>
+	
+	
+	<!-- CUSTOM LOGGING - SLF4J LOGGING -->
+	<dependency>
+   		<groupId>ch.qos.logback</groupId>
+	    <artifactId>logback-classic</artifactId>
+	    <version>1.2.1</version>
+	</dependency>
+	
+	<dependency>
+	    <groupId>org.slf4j</groupId>
+	    <artifactId>jcl-over-slf4j</artifactId>
+	    <version>1.7.24</version>
+	</dependency>
+	
 
   </dependencies>
   

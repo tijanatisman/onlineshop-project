@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class HibernateConfig {
 	
-	private final static String DATABASE_URL = "jdbc:h2:~/test;AUTO_SERVER=TRUE";
+	private final static String DATABASE_URL = "jdbc:h2:tcp://localhost/~/onlineshop;AUTO_SERVER=TRUE";
 	private final static String DATABASE_DRIVER = "org.h2.Driver";
 	private final static String DATABASE_DIALECT = "org.hibernate.dialect.H2Dialect"; //ovo znaci da ne moram da se brinem oko sql query-a, jer ce ih hibernate prilagoditi bilo kojoj bazi koju koristimo
 	private final static String DATABASE_USERNAME = "sa";

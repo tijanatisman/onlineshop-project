@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="consoleAppender" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<Pattern>%-5level %msg %d{HH:mm:ss.SSS} %logger{36} %n</Pattern> <!-- ako ti nije jasan ovaj pattern mozes pogledati video Part 04 - 06 - SLF4J Logging facility
+			i tu ce pisati na 8:54min objasnjenje ovoga -->
+		</encoder>
+	</appender>
+
+	<logger name="net.main" level="DEBUG" additivity="false"> <!-- ovde sam stavila DEBUG da bih mogla da vidim sve sto se desava u mojoj aplikaciji samo, a ovo additivity je da se obavestenje ne pojavljuje vise puta, tacnije npr jedno ispod drugog u konzoli, ali pojavice se onako kako je definisano u tamo gde je pozvan logger, ako je definisano kao .info prikazace se kao INFO, ako je kao .debug prikazace se kao DEBUG u konzoli -->
+		<appender-ref ref="consoleAppender"/>
+	</logger>
+
+	<root level="INFO"> <!-- ovde sam stavila INFO, jer je po defaultu DEBUG i onda prikazuje sve sto je izvrseno u aplikaciji, i springove notifikacije, sve... -->
+		<appender-ref ref="consoleAppender"/>
+	</root>
+
+
+</configuration>

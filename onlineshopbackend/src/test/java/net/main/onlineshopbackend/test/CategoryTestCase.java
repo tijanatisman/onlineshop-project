@@ -25,7 +25,7 @@ public class CategoryTestCase {
 		categoryDao = (CategoryDao) context.getBean(CategoryDao.class); //mozda ces u dao morati da dodas kao repository categoryDao
 	}
 	
-	@Test
+//	@Test
 	public void testAddCategory() {
 		category = new Category();
 		category.setName("Laptop");

@@ -10,7 +10,8 @@
    http://www.springframework.org/schema/mvc
    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-	<context:component-scan base-package="net.main.onlineshop.controller"/>
+	<!-- Mogla bi i da obrises neki od ova dva contexta ispod i da za base-package stavis samo "net.main onda bi uzeo u obzir i frontend i backend, ali bolje je ovako razdvojiti" -->
+	<context:component-scan base-package="net.main.onlineshop"/>
 	<context:component-scan base-package="net.main.onlineshopbackend"/>
 
 	<bean id="viewResolver"

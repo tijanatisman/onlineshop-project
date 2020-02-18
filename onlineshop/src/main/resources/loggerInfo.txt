@@ -1,0 +1,11 @@
+				|
+				|--appender (name, class)
+				|		|----encoder
+				|			|----Pattern
+				|
+configuration---|
+				|--logger (name, level, additivity)
+				|	|--appender-ref (ref)
+				|
+				|--root (by default level is DEBUG so keep it simple to INFO)
+				|	|--appender-ref (ref)
