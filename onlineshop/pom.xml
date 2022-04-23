@@ -10,7 +10,7 @@
   
   <properties>
   		<javaee.version>8.0.1</javaee.version> <!-- proveri da li se ovo promenilo kada updateujes projekat (treba da se promeni na 8.0.1) -->
-  		<spring.version>4.3.6.RELEASE</spring.version>
+  		<spring.version>5.3.19</spring.version>
   </properties>
   
   <dependencies>
